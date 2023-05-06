@@ -29,20 +29,22 @@ namespace C_小区物业管理
 
         private void Myinterface_Load(object sender, EventArgs e)
         {
+            //设置背景图片和窗口大小一致
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+            //绘制LOGO图片为圆形
             pictureBox1.Paint += new PaintEventHandler(pictureBox1_Paint);
-            pictureBox1.Image = Image.FromFile("E:\\C#项目\\C#小区物业管理\\Resources\\1.png");
+            //获取当前登录用户名
             Userlabel.Text = new Login().user();
-            
 
         }
-
+        //打开修改信息窗口
         private void SetinformationlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             setinfo setinfo = new setinfo();
             setinfo.Show();
             Close();
         }
-
+        //打开界面管理窗口
         private void interfacelinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new SetUI().Show();

@@ -16,5 +16,25 @@ namespace C_小区物业管理
         {
             InitializeComponent();
         }
+
+        private void LOGOButton_Click(object sender, EventArgs e)
+        {
+            UIsplit.Panel2Collapsed = true;
+            UIButton.Checked = false;
+            
+        }
+
+        private void UIButton_Click(object sender, EventArgs e)
+        {
+            UIsplit.Panel1Collapsed = true;
+            LOGOButton.Checked = false;
+        }
+
+        private void SetUI_Load(object sender, EventArgs e)
+        {
+
+            UIsplit.Panel2Collapsed=true;
+            LOGOButton.Checked = true;
+        }
     }
 }
