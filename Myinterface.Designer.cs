@@ -170,7 +170,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::C_小区物业管理.Properties.Resources.背景1;
             this.ClientSize = new System.Drawing.Size(1356, 631);
             this.Controls.Add(this.personnellinkLabel);
             this.Controls.Add(this.CustomerlinkLabel);
