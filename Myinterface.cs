@@ -60,5 +60,10 @@ namespace C_小区物业管理
             setUI.Owner = this; // 将Myinterface窗口本身作为Owner属性传递给SetUI窗口
             setUI.ShowDialog();
         }
+
+        private void financelinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new Finance().ShowDialog();
+        }
     }
 }

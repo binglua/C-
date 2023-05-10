@@ -123,6 +123,7 @@
             this.financelinkLabel.TabIndex = 6;
             this.financelinkLabel.TabStop = true;
             this.financelinkLabel.Text = "财务管理";
+            this.financelinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.financelinkLabel_LinkClicked);
             // 
             // CustomerlinkLabel
             // 
