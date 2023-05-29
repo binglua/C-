@@ -10,6 +10,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+
 
 namespace C_小区物业管理
 {
@@ -515,6 +517,7 @@ namespace C_小区物业管理
         {
             // 比较输入的验证码和系统生成的验证码是否一致
             return string.Equals(inputCaptcha, systemCaptcha, StringComparison.InvariantCultureIgnoreCase);
+           
         }
 
         // 获取系统生成的验证码
@@ -534,21 +537,9 @@ namespace C_小区物业管理
             string legalIdCard, string legalName, string email)
         {
             // SQL 语句插入修改信息
-            string sql = "UPDATE tenant set password=@password, company_name=@companyName, company_address=@companyAddress, company_phone=@companyPhone, " +
-                "company_postal_code=@companyPostalCode, legal_id_card=@legalIdCard, legal_name=@legalName, email=@email where username=@uaername";
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-        new SqlParameter("@password", SqlDbType.VarChar, 20) { Value = password },
-        new SqlParameter("@companyName", SqlDbType.NVarChar, 50) { Value = companyName },
-        new SqlParameter("@companyAddress", SqlDbType.NVarChar) { Value = companyAddress },
-        new SqlParameter("@companyPhone", SqlDbType.VarChar, 20) { Value = companyPhone },
-        new SqlParameter("@companyPostalCode", SqlDbType.VarChar, 6) { Value = companyPostalCode },
-        new SqlParameter("@legalIdCard", SqlDbType.VarChar, 18) { Value = legalIdCard },
-        new SqlParameter("@legalName", SqlDbType.NVarChar, 20) { Value = legalName },
-        new SqlParameter("@email", SqlDbType.VarChar, 50) { Value = email },
-        new SqlParameter("@uaername", SqlDbType.VarChar, 50) { Value = new Login().user() }
-            };
-            int rows = DbHelper.ExecuteNonQuery(sql, parameters);
+            string sql = string.Format("UPDATE GuanLiYuan set password='{0}', company_name='{1}', company_address='{2}', company_phone='{3}',company_postal_code='{4}', legal_id_card='{5}', legal_name='{6}', email='{7}' where username='{8}'", password, companyName, companyAddress, companyPhone, companyPostalCode, legalIdCard, legalName, email, new Login().user());
+
+            int rows = DbHelper.ExecuteNonQuery(sql);
             return rows > 0;
 
         }
@@ -564,7 +555,6 @@ namespace C_小区物业管理
         private void returnbutton_Click(object sender, EventArgs e)
         {
             //终止当前窗口
-            new Myinterface().Show();
             Close();
             
         }
@@ -583,9 +573,10 @@ namespace C_小区物业管理
             systemCaptcha = VerificationCode.GetSystemCaptcha();
             GenerateCode();
         }
-
+        public string tmp;
         private void registerBtn_Click(object sender, EventArgs e)
         {
+            string use = new Login().user();
             string password = passwordTxtBox.Text.Trim();
             string confirmPassword = confirmPasswordTxtBox.Text.Trim();
             string companyName = companyNameTxtBox.Text.Trim();
@@ -596,50 +587,73 @@ namespace C_小区物业管理
             string legalName = legalNameTxtBox.Text.Trim();
             string email = emailTxtBox.Text.Trim();
             string captcha = captchaTxtBox.Text.Trim();
-
-            // 检查必填项是否为空
-            if (string.IsNullOrEmpty(password) ||
-                string.IsNullOrEmpty(confirmPassword) || string.IsNullOrEmpty(companyName) ||
-                string.IsNullOrEmpty(companyAddress) || string.IsNullOrEmpty(companyPhone) ||
-                string.IsNullOrEmpty(companyPostalCode) || string.IsNullOrEmpty(legalIdCard) ||
-                string.IsNullOrEmpty(legalName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(captcha))
+            if (password== "")
             {
-                MessageBox.Show("请填写完整信息！", "修改提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                password= DbHelper.ExecuteScalar(string.Format("select {0} from GuanLiYuan where username='{1}'", "password", use)).ToString();
+            }
+            if (companyName == "") 
+            { 
+                companyName= DbHelper.ExecuteScalar(string.Format("select {0} from GuanLiYuan where username='{1}'", "company_name", use)).ToString();
+            }
+            if (companyAddress == "") 
+            {
+                companyAddress= DbHelper.ExecuteScalar(string.Format("select {0} from GuanLiYuan where username='{1}'", "company_address", use)).ToString();
+            }
+            if (companyPhone == "")
+            {
+                companyPhone= DbHelper.ExecuteScalar(string.Format("select {0} from GuanLiYuan where username='{1}'", "company_phone", use)).ToString();
+            }
+            if (companyPostalCode == "")
+            {
+                companyPostalCode= DbHelper.ExecuteScalar(string.Format("select {0} from GuanLiYuan where username='{1}'", "company_postal_code", use)).ToString();
+            }
+            if (legalIdCard == "")
+            {
+                legalIdCard= DbHelper.ExecuteScalar(string.Format("select {0} from GuanLiYuan where username='{1}'", "legal_id_card", use)).ToString();
+            }
+            if (legalName == "")
+            {
+                legalName= DbHelper.ExecuteScalar(string.Format("select {0} from GuanLiYuan where username='{1}'", "legal_name", use)).ToString();
+            }
+            if (email=="")
+            {
+               string SqlP = string.Format("select {0} from GuanLiYuan where username='{1}'", "email", use);
+                email = (string)DbHelper.ExecuteScalar(SqlP);
             }
 
+            
             // 检查密码格式是否正确
-            if (!Regex.IsMatch(password, "^[a-zA-Z0-9]{6,20}$"))
+            if (!Regex.IsMatch(password, "^[a-zA-Z0-9]{6,20}$") && password != "")
             {
                 MessageBox.Show("密码格式不正确，请重新输入！", "修改提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             // 检查确认密码和密码是否一致
-            if (password != confirmPassword)
+            if (password != confirmPassword&&confirmPassword!= "")
             {
                 MessageBox.Show("两次密码不一致，请重新输入！", "修改提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             // 检查公司电话号码格式是否正确
-            if (!Regex.IsMatch(companyPhone, "^\\d{7,14}$"))
+            if (!Regex.IsMatch(companyPhone, "^\\d{7,14}$")&&companyPhone!= "")
             {
                 MessageBox.Show("电话号码有误，请重新输入！", "修改提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             // 检查公司邮编格式是否正确
-            if (!Regex.IsMatch(companyPostalCode, "^\\d{6}$"))
+            if (!Regex.IsMatch(companyPostalCode, "^\\d{6}$")&&companyPostalCode!= "")
             {
                 MessageBox.Show("邮编错误，请重新输入！", "修改提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             // 检查法人身份证格式是否正确
-            if (!Regex.IsMatch(legalIdCard, "^\\d{16}$|^\\d{18}$"))
+            if (!Regex.IsMatch(legalIdCard, "^\\d{16}$|^\\d{18}$") && legalIdCard != "")
             {
                 MessageBox.Show("身份证错误，请重新输入！", "修改提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             // 检查邮箱格式是否正确
-            if (!Regex.IsMatch(email, "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"))
+            if (!Regex.IsMatch(email, "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$") && email != "")
             {
                 MessageBox.Show("邮箱有误，请重新输入！", "修改提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

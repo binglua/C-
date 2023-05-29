@@ -93,6 +93,16 @@ namespace C_小区物业管理
         }
 
 
+        //两个确定按钮
+        private void Okbutton_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void OK_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
 
         //背景图片按钮
         private void pictureBox10_Click(object sender, EventArgs e)
@@ -124,5 +134,23 @@ namespace C_小区物业管理
         {
             SetBack(pictureBox15.Image);
         }
+
+
+
+        //选择自定义图片后
+        private void openFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+           string photoFilePath = openFileDialog1.FileName;
+            Image photoImage = Image.FromFile(photoFilePath);
+            SetBack(photoImage);
+        }
+
+        //打开选择文件页面
+        private void Customization_CheckedChanged(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+
     }
 }

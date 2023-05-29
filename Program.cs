@@ -16,7 +16,7 @@ namespace C_小区物业管理
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Myinterface());
         }
     }
 }

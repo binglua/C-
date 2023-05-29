@@ -35,6 +35,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,12 +50,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbHelper.cs" />
-    <Compile Include="Finance.cs">
+    <Compile Include="Customer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Finance.Designer.cs">
-      <DependentUpon>Finance.cs</DependentUpon>
+    <Compile Include="Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbHelper.cs" />
+    <Compile Include="finance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="finance.Designer.cs">
+      <DependentUpon>finance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Information.Designer.cs">
+      <DependentUpon>Information.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -64,6 +80,12 @@
     </Compile>
     <Compile Include="Myinterface.Designer.cs">
       <DependentUpon>Myinterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="personnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="personnel.Designer.cs">
+      <DependentUpon>personnel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="projectDataSet.Designer.cs">
@@ -91,14 +113,33 @@
       <DependentUpon>SetUI.cs</DependentUpon>
     </Compile>
     <Compile Include="VerificationCode.cs" />
-    <EmbeddedResource Include="Finance.resx">
-      <DependentUpon>Finance.cs</DependentUpon>
+    <Compile Include="XiaoQuDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XiaoQuDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="XiaoQuDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XiaoQuDataSet1.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="finance.resx">
+      <DependentUpon>finance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Information.resx">
+      <DependentUpon>Information.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Myinterface.resx">
       <DependentUpon>Myinterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="personnel.resx">
+      <DependentUpon>personnel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +160,7 @@
     <EmbeddedResource Include="SetUI.resx">
       <DependentUpon>SetUI.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="projectDataSet.xsc">
       <DependentUpon>projectDataSet.xsd</DependentUpon>
     </None>
@@ -130,6 +172,134 @@
     <None Include="projectDataSet.xss">
       <DependentUpon>projectDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\DbHelper.datasource" />
+    <None Include="Properties\DataSources\Finance.datasource" />
+    <None Include="Properties\DataSources\Login.datasource" />
+    <None Include="Properties\DataSources\Myinterface.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\projectDataSet.datasource" />
+    <None Include="Properties\DataSources\projectDataSet.tenantDataTable.datasource" />
+    <None Include="Properties\DataSources\projectDataSet.tenantRow.datasource" />
+    <None Include="Properties\DataSources\projectDataSet.tenantRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\projectDataSet.tenantRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\Registration.datasource" />
+    <None Include="Properties\DataSources\setinfo.datasource" />
+    <None Include="Properties\DataSources\SetUI.datasource" />
+    <None Include="Properties\DataSources\VerificationCode.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.BoXiuXiangMuDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.BoXiuXiangMuRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.BoXiuXiangMuRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.BoXiuXiangMuRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.CheWeiXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.CheWeiXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.CheWeiXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.CheWeiXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.FangJianXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.FangJianXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.FangJianXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.FangJianXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.GuanLiYuanDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.GuanLiYuanRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.GuanLiYuanRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.GuanLiYuanRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.HuZhuDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.HuZhuRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.HuZhuRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.HuZhuRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouCengXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouCengXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouCengXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouCengXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouDongXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouDongXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouDongXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouDongXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouPanXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouPanXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouPanXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.LouPanXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.QianFeiTiXingDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.QianFeiTiXingRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.QianFeiTiXingRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.QianFeiTiXingRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.TouSuXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.TouSuXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.TouSuXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.TouSuXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoFeiXiangMuDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoFeiXiangMuRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoFeiXiangMuRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoFeiXiangMuRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoFeiZhangDanDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoFeiZhangDanRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoFeiZhangDanRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoFeiZhangDanRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoQuXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoQuXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoQuXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.XiaoQuXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.ZhiWeiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.ZhiWeiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.ZhiWeiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet.ZhiWeiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.BoXiuXiangMuDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.BoXiuXiangMuRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.BoXiuXiangMuRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.BoXiuXiangMuRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.CheWeiXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.CheWeiXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.CheWeiXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.CheWeiXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.FangJianXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.FangJianXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.FangJianXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.FangJianXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.GuanLiYuanDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.GuanLiYuanRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.GuanLiYuanRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.GuanLiYuanRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.HuZhuDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.HuZhuRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.HuZhuRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.HuZhuRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouCengXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouCengXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouCengXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouCengXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouDongXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouDongXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouDongXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouDongXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouPanXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouPanXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouPanXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.LouPanXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.QianFeiTiXingDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.QianFeiTiXingRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.QianFeiTiXingRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.QianFeiTiXingRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.TouSuXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.TouSuXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.TouSuXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.TouSuXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoFeiXiangMuDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoFeiXiangMuRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoFeiXiangMuRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoFeiXiangMuRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoFeiZhangDanDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoFeiZhangDanRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoFeiZhangDanRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoFeiZhangDanRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoQuXinXiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoQuXinXiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoQuXinXiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.XiaoQuXinXiRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.ZhiWeiDataTable.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.ZhiWeiRow.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.ZhiWeiRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\XiaoQuDataSet1.ZhiWeiRowChangeEventHandler.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -139,6 +309,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="XiaoQuDataSet.xsc">
+      <DependentUpon>XiaoQuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="XiaoQuDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>XiaoQuDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XiaoQuDataSet.xss">
+      <DependentUpon>XiaoQuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="XiaoQuDataSet1.xsc">
+      <DependentUpon>XiaoQuDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="XiaoQuDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>XiaoQuDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XiaoQuDataSet1.xss">
+      <DependentUpon>XiaoQuDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -190,6 +382,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

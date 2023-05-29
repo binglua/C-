@@ -13,10 +13,26 @@ namespace C_小区物业管理
 {
     public partial class Myinterface : Form
     {
+        //加载本窗口时
+        private void Myinterface_Load(object sender, EventArgs e)
+        {
+            //设置背景图片和窗口大小一致
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+            //绘制LOGO图片为圆形
+            pictureBox1.Paint += new PaintEventHandler(pictureBox1_Paint);
+            //获取当前登录用户名
+            Userlabel.Text = new Login().user();
+            //每次打开获取LOGO
+            //SetLOGO();
+
+        }
+
+
         public Myinterface()
         {
             InitializeComponent();
         }
+
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             GraphicsPath gp = new GraphicsPath();
@@ -34,24 +50,13 @@ namespace C_小区物业管理
         {
             this.BackgroundImage = image;
         }
-        private void Myinterface_Load(object sender, EventArgs e)
-        {
-            //设置背景图片和窗口大小一致
-            this.BackgroundImageLayout = ImageLayout.Stretch;
-            //绘制LOGO图片为圆形
-            pictureBox1.Paint += new PaintEventHandler(pictureBox1_Paint);
-            //获取当前登录用户名
-            Userlabel.Text = new Login().user();
-            //每次打开获取LOGO
-            //SetLOGO();
 
-        }
         //打开修改信息窗口
         private void SetinformationlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             setinfo setinfo = new setinfo();
             setinfo.Show();
-            Close();
+            
         }
         //打开界面管理窗口
         private void interfacelinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -60,10 +65,32 @@ namespace C_小区物业管理
             setUI.Owner = this; // 将Myinterface窗口本身作为Owner属性传递给SetUI窗口
             setUI.ShowDialog();
         }
-
+        //打开财务管理
         private void financelinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            new Finance().ShowDialog();
+            new finance().ShowDialog();
         }
+        //打开基本信息维护
+        private void BasiclinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new Information().ShowDialog();
+        }
+        //打开客服页面
+        private void CustomerlinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new Customer().ShowDialog();
+        }
+        //打开人员信息维护
+        private void personnellinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new personnel().ShowDialog();
+        }
+        //关闭该窗口时退出整个程序
+        private void Myinterface_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+
     }
 }

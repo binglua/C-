@@ -24,17 +24,21 @@ namespace C_小区物业管理
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("请填写用户名和密码", "登陆提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                
             }
             if (!VerifyCaptcha(captcha))
             {
+                
                 MessageBox.Show("验证码错误，请重新输入！", "注册提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                GenerateCode();
+
             }
             bool success = CheckUser(username, password);
             if (success&&VerifyCaptcha(captcha))
             {
                 MessageBox.Show("登陆成功！", "登陆提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // 登录成功，隐藏登录窗口
+                this.Hide();
                 //进入系统界面
                 Myinterface myinterface = new Myinterface();
                 myinterface.Show();
@@ -49,13 +53,9 @@ namespace C_小区物业管理
         private bool CheckUser(string username, string password)
         {
             // SQL 语句查询用户名和密码是否匹配
-            string sql = "SELECT COUNT(*) FROM tenant WHERE username=@username AND password=@password";
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-        new SqlParameter("@username", SqlDbType.VarChar, 50) { Value = username },
-        new SqlParameter("@password", SqlDbType.VarChar, 50) { Value = password }
-            };
-            int count = (int)DbHelper.ExecuteScalar(sql, parameters);
+            string sql = string.Format("SELECT COUNT(*) FROM GuanLiYuan WHERE username='{0}' AND password='{1}'", username, password);
+            int count = (int)DbHelper.ExecuteScalar(sql);
+
             return count > 0;
 
         }

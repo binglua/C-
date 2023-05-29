@@ -109,6 +109,7 @@
             this.BasiclinkLabel.TabIndex = 5;
             this.BasiclinkLabel.TabStop = true;
             this.BasiclinkLabel.Text = "基本信息维护";
+            this.BasiclinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.BasiclinkLabel_LinkClicked);
             // 
             // financelinkLabel
             // 
@@ -138,6 +139,7 @@
             this.CustomerlinkLabel.TabIndex = 8;
             this.CustomerlinkLabel.TabStop = true;
             this.CustomerlinkLabel.Text = "客服管理";
+            this.CustomerlinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CustomerlinkLabel_LinkClicked);
             // 
             // personnellinkLabel
             // 
@@ -152,6 +154,7 @@
             this.personnellinkLabel.TabIndex = 9;
             this.personnellinkLabel.TabStop = true;
             this.personnellinkLabel.Text = "人员信息维护";
+            this.personnellinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.personnellinkLabel_LinkClicked);
             // 
             // pictureBox1
             // 
@@ -171,6 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1356, 631);
             this.Controls.Add(this.personnellinkLabel);
             this.Controls.Add(this.CustomerlinkLabel);
@@ -184,6 +188,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Myinterface";
             this.Text = "我的";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Myinterface_FormClosing);
             this.Load += new System.EventHandler(this.Myinterface_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

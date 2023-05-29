@@ -34,7 +34,14 @@ namespace C_小区物业管理
         // 获取省份列表
         private List<string> GetProvinces()
         {
-            return new List<string>() { "北京市", "天津市", "上海市", "重庆市", "河北省", "山西省", "辽宁省", "吉林省", "黑龙江省", "江苏省", "浙江省", "安徽省", "福建省", "江西省", "山东省", "河南省", "湖北省", "湖南省", "广东省", "广西壮族自治区", "海南省", "四川省", "贵州省", "云南省", "西藏自治区", "陕西省", "甘肃省", "青海省", "宁夏回族自治区", "新疆维吾尔自治区"};
+            return new List<string>() 
+            { "北京市", "天津市", "上海市", "重庆市", "河北省", "山西省", 
+                "辽宁省", "吉林省", "黑龙江省", "江苏省", "浙江省", "安徽省", 
+                "福建省", "江西省", "山东省", "河南省", "湖北省", "湖南省", 
+                "广东省", "广西壮族自治区", "海南省", "四川省", "贵州省", 
+                "云南省", "西藏自治区", "陕西省", "甘肃省", "青海省", 
+                "宁夏回族自治区", "新疆维吾尔自治区"
+            };
         }
 
         // 获取城市列表
@@ -585,6 +592,7 @@ namespace C_小区物业管理
             if (!VerifyCaptcha(captcha))
             {
                 MessageBox.Show("验证码错误，请重新输入！", "注册提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GenerateCode();
                 return;
             }
 
@@ -623,22 +631,8 @@ namespace C_小区物业管理
             string legalIdCard, string legalName, string email)
         {
             // SQL 语句插入注册信息
-            string sql = "INSERT INTO tenant (username, password, company_name, company_address, company_phone, " +
-                "company_postal_code, legal_id_card, legal_name, email) VALUES (@username, @password, @companyName, " +
-                "@companyAddress, @companyPhone, @companyPostalCode, @legalIdCard, @legalName, @email)";
-            SqlParameter[] parameters = new SqlParameter[]
-            {
-        new SqlParameter("@username", SqlDbType.VarChar, 16) { Value = username },
-        new SqlParameter("@password", SqlDbType.VarChar, 20) { Value = password },
-        new SqlParameter("@companyName", SqlDbType.NVarChar, 50) { Value = companyName },
-        new SqlParameter("@companyAddress", SqlDbType.NVarChar) { Value = companyAddress },
-        new SqlParameter("@companyPhone", SqlDbType.VarChar, 20) { Value = companyPhone },
-        new SqlParameter("@companyPostalCode", SqlDbType.VarChar, 6) { Value = companyPostalCode },
-        new SqlParameter("@legalIdCard", SqlDbType.VarChar, 18) { Value = legalIdCard },
-        new SqlParameter("@legalName", SqlDbType.NVarChar, 20) { Value = legalName },
-        new SqlParameter("@email", SqlDbType.VarChar, 50) { Value = email }
-            };
-            int rows = DbHelper.ExecuteNonQuery(sql, parameters);
+            string sql = string.Format("INSERT INTO GuanLiYuan VALUES ('{0}', '{1}', '{2}','{3}', '{4}', '{5}', '{6}', '{7}', '{8}',3)", username, password, companyName, companyAddress, companyPhone, companyPostalCode, legalIdCard, legalName, email);
+            int rows = DbHelper.ExecuteNonQuery(sql);
             return rows > 0;
 
         }

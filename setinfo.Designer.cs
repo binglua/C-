@@ -59,7 +59,7 @@
             // returnbutton
             // 
             this.returnbutton.Location = new System.Drawing.Point(486, 638);
-            this.returnbutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.returnbutton.Margin = new System.Windows.Forms.Padding(4);
             this.returnbutton.Name = "returnbutton";
             this.returnbutton.Size = new System.Drawing.Size(136, 77);
             this.returnbutton.TabIndex = 55;
@@ -71,7 +71,7 @@
             // 
             this.cityComboBox.FormattingEnabled = true;
             this.cityComboBox.Location = new System.Drawing.Point(424, 257);
-            this.cityComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cityComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cityComboBox.Name = "cityComboBox";
             this.cityComboBox.Size = new System.Drawing.Size(182, 31);
             this.cityComboBox.TabIndex = 54;
@@ -81,7 +81,7 @@
             // 
             this.provinceComboBox.FormattingEnabled = true;
             this.provinceComboBox.Location = new System.Drawing.Point(252, 257);
-            this.provinceComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.provinceComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.provinceComboBox.Name = "provinceComboBox";
             this.provinceComboBox.Size = new System.Drawing.Size(164, 31);
             this.provinceComboBox.TabIndex = 53;
@@ -91,7 +91,7 @@
             // registerBtn
             // 
             this.registerBtn.Location = new System.Drawing.Point(218, 638);
-            this.registerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.registerBtn.Margin = new System.Windows.Forms.Padding(4);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(136, 77);
             this.registerBtn.TabIndex = 51;
@@ -102,7 +102,7 @@
             // captchaTxtBox
             // 
             this.captchaTxtBox.Location = new System.Drawing.Point(250, 556);
-            this.captchaTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.captchaTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.captchaTxtBox.Name = "captchaTxtBox";
             this.captchaTxtBox.Size = new System.Drawing.Size(182, 34);
             this.captchaTxtBox.TabIndex = 50;
@@ -110,7 +110,7 @@
             // emailTxtBox
             // 
             this.emailTxtBox.Location = new System.Drawing.Point(250, 506);
-            this.emailTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailTxtBox.Name = "emailTxtBox";
             this.emailTxtBox.Size = new System.Drawing.Size(356, 34);
             this.emailTxtBox.TabIndex = 49;
@@ -118,7 +118,7 @@
             // legalNameTxtBox
             // 
             this.legalNameTxtBox.Location = new System.Drawing.Point(250, 464);
-            this.legalNameTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.legalNameTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.legalNameTxtBox.Name = "legalNameTxtBox";
             this.legalNameTxtBox.Size = new System.Drawing.Size(356, 34);
             this.legalNameTxtBox.TabIndex = 48;
@@ -126,7 +126,7 @@
             // legalIdCardTxtBox
             // 
             this.legalIdCardTxtBox.Location = new System.Drawing.Point(250, 414);
-            this.legalIdCardTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.legalIdCardTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.legalIdCardTxtBox.Name = "legalIdCardTxtBox";
             this.legalIdCardTxtBox.Size = new System.Drawing.Size(356, 34);
             this.legalIdCardTxtBox.TabIndex = 47;
@@ -134,7 +134,7 @@
             // companyPostalCodeTxtBox
             // 
             this.companyPostalCodeTxtBox.Location = new System.Drawing.Point(250, 360);
-            this.companyPostalCodeTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.companyPostalCodeTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.companyPostalCodeTxtBox.Name = "companyPostalCodeTxtBox";
             this.companyPostalCodeTxtBox.Size = new System.Drawing.Size(356, 34);
             this.companyPostalCodeTxtBox.TabIndex = 46;
@@ -142,7 +142,7 @@
             // companyPhoneTxtBox
             // 
             this.companyPhoneTxtBox.Location = new System.Drawing.Point(250, 308);
-            this.companyPhoneTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.companyPhoneTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.companyPhoneTxtBox.Name = "companyPhoneTxtBox";
             this.companyPhoneTxtBox.Size = new System.Drawing.Size(356, 34);
             this.companyPhoneTxtBox.TabIndex = 45;
@@ -150,7 +150,7 @@
             // companyAddressTxtBox
             // 
             this.companyAddressTxtBox.Location = new System.Drawing.Point(614, 257);
-            this.companyAddressTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.companyAddressTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.companyAddressTxtBox.Name = "companyAddressTxtBox";
             this.companyAddressTxtBox.Size = new System.Drawing.Size(217, 34);
             this.companyAddressTxtBox.TabIndex = 44;
@@ -158,7 +158,7 @@
             // companyNameTxtBox
             // 
             this.companyNameTxtBox.Location = new System.Drawing.Point(250, 201);
-            this.companyNameTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.companyNameTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.companyNameTxtBox.Name = "companyNameTxtBox";
             this.companyNameTxtBox.Size = new System.Drawing.Size(356, 34);
             this.companyNameTxtBox.TabIndex = 43;
@@ -166,7 +166,7 @@
             // confirmPasswordTxtBox
             // 
             this.confirmPasswordTxtBox.Location = new System.Drawing.Point(250, 147);
-            this.confirmPasswordTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.confirmPasswordTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.confirmPasswordTxtBox.Name = "confirmPasswordTxtBox";
             this.confirmPasswordTxtBox.Size = new System.Drawing.Size(356, 34);
             this.confirmPasswordTxtBox.TabIndex = 42;
@@ -174,7 +174,7 @@
             // passwordTxtBox
             // 
             this.passwordTxtBox.Location = new System.Drawing.Point(250, 101);
-            this.passwordTxtBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordTxtBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTxtBox.Name = "passwordTxtBox";
             this.passwordTxtBox.Size = new System.Drawing.Size(356, 34);
             this.passwordTxtBox.TabIndex = 41;
@@ -321,7 +321,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("宋体", 10F);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "setinfo";
             this.Text = "修改信息";
             this.Load += new System.EventHandler(this.setinfo_Load);
