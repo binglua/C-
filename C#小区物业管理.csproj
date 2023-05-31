@@ -81,6 +81,18 @@
     <Compile Include="Myinterface.Designer.cs">
       <DependentUpon>Myinterface.cs</DependentUpon>
     </Compile>
+    <Compile Include="newBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newBill.Designer.cs">
+      <DependentUpon>newBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Newitem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Newitem.Designer.cs">
+      <DependentUpon>Newitem.cs</DependentUpon>
+    </Compile>
     <Compile Include="personnel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Myinterface.resx">
       <DependentUpon>Myinterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newBill.resx">
+      <DependentUpon>newBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Newitem.resx">
+      <DependentUpon>Newitem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="personnel.resx">
       <DependentUpon>personnel.cs</DependentUpon>

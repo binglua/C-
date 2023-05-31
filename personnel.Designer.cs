@@ -30,8 +30,8 @@
         {
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.personneldata = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.personneldata)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView1
@@ -51,28 +51,29 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "人员列表";
             // 
-            // dataGridView1
+            // personneldata
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(276, 100);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 72;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1005, 458);
-            this.dataGridView1.TabIndex = 2;
+            this.personneldata.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.personneldata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.personneldata.Location = new System.Drawing.Point(276, 100);
+            this.personneldata.Name = "personneldata";
+            this.personneldata.RowHeadersWidth = 72;
+            this.personneldata.RowTemplate.Height = 33;
+            this.personneldata.Size = new System.Drawing.Size(1005, 458);
+            this.personneldata.TabIndex = 2;
             // 
             // personnel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1324, 595);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.personneldata);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.treeView1);
             this.Name = "personnel";
             this.Text = "人员信息维护";
             this.Load += new System.EventHandler(this.personnel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personneldata)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,6 +83,6 @@
 
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView personneldata;
     }
 }

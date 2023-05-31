@@ -15,7 +15,7 @@ namespace C_小区物业管理
         private void SetLOGO(Image image)
         {
             Image newImage = image;
-            Myinterface myinterface = (Myinterface)this.Owner;
+            Myinterface myinterface = (Myinterface)Owner;
             myinterface.SetLOGO(newImage);
         }
         //设置背景图的方法

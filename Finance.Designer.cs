@@ -39,12 +39,14 @@
             this.BillsButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.ArrearsButton = new System.Windows.Forms.ToolStripButton();
+            this.idlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.financeData)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // financeData
             // 
+            this.financeData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.financeData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.financeData.Location = new System.Drawing.Point(250, 134);
             this.financeData.Name = "financeData";
@@ -55,53 +57,56 @@
             // 
             // newitembutton
             // 
-            this.newitembutton.Location = new System.Drawing.Point(1156, 545);
+            this.newitembutton.Location = new System.Drawing.Point(1115, 545);
             this.newitembutton.Name = "newitembutton";
             this.newitembutton.Size = new System.Drawing.Size(134, 38);
             this.newitembutton.TabIndex = 2;
             this.newitembutton.Text = "新建收费项";
             this.newitembutton.UseVisualStyleBackColor = true;
             this.newitembutton.Visible = false;
+            this.newitembutton.Click += new System.EventHandler(this.newitembutton_Click);
             // 
             // BillidBox
             // 
             this.BillidBox.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BillidBox.Location = new System.Drawing.Point(329, 47);
+            this.BillidBox.Location = new System.Drawing.Point(408, 51);
             this.BillidBox.Name = "BillidBox";
             this.BillidBox.Size = new System.Drawing.Size(393, 47);
             this.BillidBox.TabIndex = 3;
-            this.BillidBox.Text = "请输入编号";
             this.BillidBox.Visible = false;
             // 
             // Searchbutton
             // 
-            this.Searchbutton.Location = new System.Drawing.Point(762, 47);
+            this.Searchbutton.Location = new System.Drawing.Point(841, 51);
             this.Searchbutton.Name = "Searchbutton";
             this.Searchbutton.Size = new System.Drawing.Size(108, 47);
             this.Searchbutton.TabIndex = 4;
             this.Searchbutton.Text = "搜索";
             this.Searchbutton.UseVisualStyleBackColor = true;
             this.Searchbutton.Visible = false;
+            this.Searchbutton.Click += new System.EventHandler(this.Searchbutton_Click);
             // 
             // newBillbutton
             // 
-            this.newBillbutton.Location = new System.Drawing.Point(1156, 545);
+            this.newBillbutton.Location = new System.Drawing.Point(1115, 545);
             this.newBillbutton.Name = "newBillbutton";
             this.newBillbutton.Size = new System.Drawing.Size(134, 38);
             this.newBillbutton.TabIndex = 5;
             this.newBillbutton.Text = "新建收费单";
             this.newBillbutton.UseVisualStyleBackColor = true;
             this.newBillbutton.Visible = false;
+            this.newBillbutton.Click += new System.EventHandler(this.newBillbutton_Click);
             // 
             // remindbutton
             // 
-            this.remindbutton.Location = new System.Drawing.Point(1156, 545);
+            this.remindbutton.Location = new System.Drawing.Point(1115, 545);
             this.remindbutton.Name = "remindbutton";
             this.remindbutton.Size = new System.Drawing.Size(134, 38);
             this.remindbutton.TabIndex = 6;
             this.remindbutton.Text = "欠费提醒";
             this.remindbutton.UseVisualStyleBackColor = true;
             this.remindbutton.Visible = false;
+            this.remindbutton.Click += new System.EventHandler(this.remindbutton_Click);
             // 
             // itemsButton
             // 
@@ -150,11 +155,23 @@
             this.ArrearsButton.Text = "欠费提醒";
             this.ArrearsButton.Click += new System.EventHandler(this.ArrearsButton_Click);
             // 
+            // idlabel
+            // 
+            this.idlabel.AutoSize = true;
+            this.idlabel.Font = new System.Drawing.Font("宋体", 12F);
+            this.idlabel.Location = new System.Drawing.Point(245, 62);
+            this.idlabel.Name = "idlabel";
+            this.idlabel.Size = new System.Drawing.Size(166, 28);
+            this.idlabel.TabIndex = 7;
+            this.idlabel.Text = "请输入编号:";
+            this.idlabel.Visible = false;
+            // 
             // finance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1324, 595);
+            this.Controls.Add(this.idlabel);
             this.Controls.Add(this.remindbutton);
             this.Controls.Add(this.newBillbutton);
             this.Controls.Add(this.Searchbutton);
@@ -164,6 +181,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "finance";
             this.Text = "财务管理";
+            this.Load += new System.EventHandler(this.finance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.financeData)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -183,5 +201,6 @@
         private System.Windows.Forms.ToolStripButton BillsButton;
         private System.Windows.Forms.ToolStripButton ArrearsButton;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.Label idlabel;
     }
 }

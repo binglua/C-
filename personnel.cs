@@ -16,15 +16,18 @@ namespace C_小区物业管理
         {
             InitializeComponent();
         }
-
+        //加载窗口
         private void personnel_Load(object sender, EventArgs e)
         {
+            string sql = "select username 用户名,company_phone 电话,company_address 住址,legal_id_card 身份证号 from GuanLiYuan";
+           personneldata.DataSource= DbHelper.ExecuteQuery(sql);
+            //定义三个数据源
             DataTable glydt = DbHelper.ExecuteQuery("select username from GuanLiYuan where Zid=1");
             DataTable zhdt = DbHelper.ExecuteQuery("select username from GuanLiYuan where Zid=2");
             DataTable wydt = DbHelper.ExecuteQuery("select username from GuanLiYuan where Zid=3");
             TreeNode parentNode=null;
             TreeNode childNode=null;
-
+            //循环查找对应的职位并添加到树状图
             for (int i = 0; i < glydt.Rows.Count; i++)
             {
                 parentNode = new TreeNode(glydt.Rows[i][0].ToString());
@@ -41,6 +44,7 @@ namespace C_小区物业管理
                TreeNode childNode1 = new TreeNode(wydt.Rows[i][0].ToString());
                 childNode.Nodes.Add(childNode1);
             }
+            //展开树状图
             treeView1.ExpandAll();
         }
     }
