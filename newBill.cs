@@ -16,5 +16,10 @@ namespace C_小区物业管理
         {
             InitializeComponent();
         }
+
+        private void newBill_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

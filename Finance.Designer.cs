@@ -40,6 +40,12 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.ArrearsButton = new System.Windows.Forms.ToolStripButton();
             this.idlabel = new System.Windows.Forms.Label();
+            this.xid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.项目修改 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.收费单修改 = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.financeData)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -48,12 +54,20 @@
             // 
             this.financeData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.financeData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.financeData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.xid,
+            this.xname,
+            this.dj,
+            this.lx,
+            this.项目修改,
+            this.收费单修改});
             this.financeData.Location = new System.Drawing.Point(250, 134);
             this.financeData.Name = "financeData";
             this.financeData.RowHeadersWidth = 72;
             this.financeData.RowTemplate.Height = 33;
             this.financeData.Size = new System.Drawing.Size(1010, 380);
             this.financeData.TabIndex = 1;
+            this.financeData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.financeData_CellContentClick);
             // 
             // newitembutton
             // 
@@ -166,6 +180,58 @@
             this.idlabel.Text = "请输入编号:";
             this.idlabel.Visible = false;
             // 
+            // xid
+            // 
+            this.xid.DataPropertyName = "Xid";
+            this.xid.HeaderText = "项目编号";
+            this.xid.MinimumWidth = 9;
+            this.xid.Name = "xid";
+            this.xid.ReadOnly = true;
+            this.xid.Visible = false;
+            // 
+            // xname
+            // 
+            this.xname.DataPropertyName = "消费项目名称";
+            this.xname.HeaderText = "项目名称";
+            this.xname.MinimumWidth = 9;
+            this.xname.Name = "xname";
+            this.xname.Visible = false;
+            // 
+            // dj
+            // 
+            this.dj.DataPropertyName = "单价";
+            this.dj.HeaderText = "单价";
+            this.dj.MinimumWidth = 9;
+            this.dj.Name = "dj";
+            this.dj.Visible = false;
+            // 
+            // lx
+            // 
+            this.lx.DataPropertyName = "收费类型";
+            this.lx.HeaderText = "类型";
+            this.lx.MinimumWidth = 9;
+            this.lx.Name = "lx";
+            this.lx.Visible = false;
+            // 
+            // 项目修改
+            // 
+            this.项目修改.HeaderText = "修改项目";
+            this.项目修改.MinimumWidth = 9;
+            this.项目修改.Name = "项目修改";
+            this.项目修改.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.项目修改.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.项目修改.Text = "修改";
+            this.项目修改.UseColumnTextForLinkValue = true;
+            this.项目修改.Visible = false;
+            // 
+            // 收费单修改
+            // 
+            this.收费单修改.HeaderText = "修改";
+            this.收费单修改.MinimumWidth = 9;
+            this.收费单修改.Name = "收费单修改";
+            this.收费单修改.Text = "修改";
+            this.收费单修改.Visible = false;
+            // 
             // finance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
@@ -202,5 +268,11 @@
         private System.Windows.Forms.ToolStripButton ArrearsButton;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Label idlabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lx;
+        private System.Windows.Forms.DataGridViewLinkColumn 项目修改;
+        private System.Windows.Forms.DataGridViewLinkColumn 收费单修改;
     }
 }

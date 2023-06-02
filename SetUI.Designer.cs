@@ -33,6 +33,7 @@
             this.LOGOButton = new System.Windows.Forms.ToolStripButton();
             this.UIButton = new System.Windows.Forms.ToolStripButton();
             this.UIsplit = new System.Windows.Forms.SplitContainer();
+            this.OK = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -42,6 +43,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Okbutton = new System.Windows.Forms.Button();
+            this.Customization = new System.Windows.Forms.RadioButton();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
@@ -49,9 +52,6 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.Customization = new System.Windows.Forms.RadioButton();
-            this.Okbutton = new System.Windows.Forms.Button();
-            this.OK = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UIsplit)).BeginInit();
             this.UIsplit.Panel1.SuspendLayout();
@@ -142,8 +142,18 @@
             this.UIsplit.Panel2.Controls.Add(this.pictureBox10);
             this.UIsplit.Panel2.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.UIsplit.Size = new System.Drawing.Size(1313, 656);
-            this.UIsplit.SplitterDistance = 603;
+            this.UIsplit.SplitterDistance = 25;
             this.UIsplit.TabIndex = 1;
+            // 
+            // OK
+            // 
+            this.OK.Location = new System.Drawing.Point(1052, 578);
+            this.OK.Name = "OK";
+            this.OK.Size = new System.Drawing.Size(145, 45);
+            this.OK.TabIndex = 9;
+            this.OK.Text = "确定";
+            this.OK.UseVisualStyleBackColor = true;
+            this.OK.Click += new System.EventHandler(this.OK_Click);
             // 
             // pictureBox9
             // 
@@ -253,6 +263,28 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // Okbutton
+            // 
+            this.Okbutton.Location = new System.Drawing.Point(1076, 578);
+            this.Okbutton.Name = "Okbutton";
+            this.Okbutton.Size = new System.Drawing.Size(145, 45);
+            this.Okbutton.TabIndex = 8;
+            this.Okbutton.Text = "确定";
+            this.Okbutton.UseVisualStyleBackColor = true;
+            this.Okbutton.Click += new System.EventHandler(this.Okbutton_Click);
+            // 
+            // Customization
+            // 
+            this.Customization.AutoSize = true;
+            this.Customization.Location = new System.Drawing.Point(925, 598);
+            this.Customization.Name = "Customization";
+            this.Customization.Size = new System.Drawing.Size(98, 25);
+            this.Customization.TabIndex = 7;
+            this.Customization.TabStop = true;
+            this.Customization.Text = "自定义";
+            this.Customization.UseVisualStyleBackColor = true;
+            this.Customization.CheckedChanged += new System.EventHandler(this.Customization_CheckedChanged);
+            // 
             // pictureBox12
             // 
             this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Default;
@@ -332,38 +364,6 @@
             this.openFileDialog1.Filter = "\"图片(*.png)|*.png|所有文件(*.*)|*.*”";
             this.openFileDialog1.Title = "自定义";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // Customization
-            // 
-            this.Customization.AutoSize = true;
-            this.Customization.Location = new System.Drawing.Point(925, 598);
-            this.Customization.Name = "Customization";
-            this.Customization.Size = new System.Drawing.Size(98, 25);
-            this.Customization.TabIndex = 7;
-            this.Customization.TabStop = true;
-            this.Customization.Text = "自定义";
-            this.Customization.UseVisualStyleBackColor = true;
-            this.Customization.CheckedChanged += new System.EventHandler(this.Customization_CheckedChanged);
-            // 
-            // Okbutton
-            // 
-            this.Okbutton.Location = new System.Drawing.Point(1076, 578);
-            this.Okbutton.Name = "Okbutton";
-            this.Okbutton.Size = new System.Drawing.Size(145, 45);
-            this.Okbutton.TabIndex = 8;
-            this.Okbutton.Text = "确定";
-            this.Okbutton.UseVisualStyleBackColor = true;
-            this.Okbutton.Click += new System.EventHandler(this.Okbutton_Click);
-            // 
-            // OK
-            // 
-            this.OK.Location = new System.Drawing.Point(1052, 578);
-            this.OK.Name = "OK";
-            this.OK.Size = new System.Drawing.Size(145, 45);
-            this.OK.TabIndex = 9;
-            this.OK.Text = "确定";
-            this.OK.UseVisualStyleBackColor = true;
-            this.OK.Click += new System.EventHandler(this.OK_Click);
             // 
             // SetUI
             // 
