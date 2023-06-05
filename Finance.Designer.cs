@@ -44,14 +44,19 @@
             this.xname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lx = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.项目修改 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.收费单修改 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.修改 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.删除 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.姓名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.欠费金额 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.欠费日期 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.住址 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.financeData)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // financeData
             // 
+            this.financeData.AllowUserToOrderColumns = true;
             this.financeData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.financeData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.financeData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -59,8 +64,12 @@
             this.xname,
             this.dj,
             this.lx,
-            this.项目修改,
-            this.收费单修改});
+            this.修改,
+            this.删除,
+            this.姓名,
+            this.欠费金额,
+            this.欠费日期,
+            this.住址});
             this.financeData.Location = new System.Drawing.Point(250, 134);
             this.financeData.Name = "financeData";
             this.financeData.RowHeadersWidth = 72;
@@ -191,11 +200,10 @@
             // 
             // xname
             // 
-            this.xname.DataPropertyName = "消费项目名称";
-            this.xname.HeaderText = "项目名称";
+            this.xname.DataPropertyName = "名称";
+            this.xname.HeaderText = "名称";
             this.xname.MinimumWidth = 9;
             this.xname.Name = "xname";
-            this.xname.Visible = false;
             // 
             // dj
             // 
@@ -213,24 +221,57 @@
             this.lx.Name = "lx";
             this.lx.Visible = false;
             // 
-            // 项目修改
+            // 修改
             // 
-            this.项目修改.HeaderText = "修改项目";
-            this.项目修改.MinimumWidth = 9;
-            this.项目修改.Name = "项目修改";
-            this.项目修改.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.项目修改.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.项目修改.Text = "修改";
-            this.项目修改.UseColumnTextForLinkValue = true;
-            this.项目修改.Visible = false;
+            this.修改.HeaderText = "修改";
+            this.修改.MinimumWidth = 9;
+            this.修改.Name = "修改";
+            this.修改.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.修改.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.修改.Text = "修改";
+            this.修改.UseColumnTextForLinkValue = true;
+            this.修改.Visible = false;
             // 
-            // 收费单修改
+            // 删除
             // 
-            this.收费单修改.HeaderText = "修改";
-            this.收费单修改.MinimumWidth = 9;
-            this.收费单修改.Name = "收费单修改";
-            this.收费单修改.Text = "修改";
-            this.收费单修改.Visible = false;
+            this.删除.HeaderText = "删除";
+            this.删除.MinimumWidth = 9;
+            this.删除.Name = "删除";
+            this.删除.Text = "删除";
+            this.删除.UseColumnTextForLinkValue = true;
+            this.删除.Visible = false;
+            // 
+            // 姓名
+            // 
+            this.姓名.DataPropertyName = "户主名字";
+            this.姓名.HeaderText = "姓名";
+            this.姓名.MinimumWidth = 9;
+            this.姓名.Name = "姓名";
+            this.姓名.Visible = false;
+            // 
+            // 欠费金额
+            // 
+            this.欠费金额.DataPropertyName = "欠费金额";
+            this.欠费金额.HeaderText = "欠费金额";
+            this.欠费金额.MinimumWidth = 9;
+            this.欠费金额.Name = "欠费金额";
+            this.欠费金额.Visible = false;
+            // 
+            // 欠费日期
+            // 
+            this.欠费日期.DataPropertyName = "欠费日期";
+            this.欠费日期.HeaderText = "欠费日期";
+            this.欠费日期.MinimumWidth = 9;
+            this.欠费日期.Name = "欠费日期";
+            this.欠费日期.Visible = false;
+            // 
+            // 住址
+            // 
+            this.住址.DataPropertyName = "住址";
+            this.住址.HeaderText = "住址";
+            this.住址.MinimumWidth = 9;
+            this.住址.Name = "住址";
+            this.住址.Visible = false;
             // 
             // finance
             // 
@@ -272,7 +313,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn xname;
         private System.Windows.Forms.DataGridViewTextBoxColumn dj;
         private System.Windows.Forms.DataGridViewTextBoxColumn lx;
-        private System.Windows.Forms.DataGridViewLinkColumn 项目修改;
-        private System.Windows.Forms.DataGridViewLinkColumn 收费单修改;
+        private System.Windows.Forms.DataGridViewLinkColumn 修改;
+        private System.Windows.Forms.DataGridViewLinkColumn 删除;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 姓名;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 欠费金额;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 欠费日期;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 住址;
     }
 }

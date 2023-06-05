@@ -150,7 +150,5 @@ namespace C_小区物业管理
         {
             openFileDialog1.ShowDialog();
         }
-
-
     }
 }
