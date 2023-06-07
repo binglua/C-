@@ -16,6 +16,19 @@ namespace C_小区物业管理
         //加载本窗口时
         private void Myinterface_Load(object sender, EventArgs e)
         {
+
+            if ((int)Tag==1)
+            {
+                
+            }
+            else if ((int)Tag == 2)
+            {
+                CustomerlinkLabel.Visible = false;
+            }
+            else if ((int)Tag == 3)
+            {
+
+            }
             //设置背景图片和窗口大小一致
             this.BackgroundImageLayout = ImageLayout.Stretch;
             //绘制LOGO图片为圆形

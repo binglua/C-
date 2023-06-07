@@ -37,10 +37,13 @@ namespace C_小区物业管理
             if (success&&VerifyCaptcha(captcha))
             {
                 MessageBox.Show("登陆成功！", "登陆提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string sql = string.Format("select Zid from GuanLiYuan WHERE username='{0}' AND password='{1}'", username, password);
+                
                 // 登录成功，隐藏登录窗口
                 this.Hide();
                 //进入系统界面
                 Myinterface myinterface = new Myinterface();
+                myinterface.Tag = (int)DbHelper.ExecuteScalar(sql); ;
                 myinterface.Show();
             }
             else
