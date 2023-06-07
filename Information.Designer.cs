@@ -35,7 +35,6 @@
             this.OwnerButton = new System.Windows.Forms.ToolStripButton();
             this.DrivewayButton = new System.Windows.Forms.ToolStripButton();
             this.SQLTABLE = new System.Windows.Forms.DataGridView();
-            this.testbutton = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SQLTABLE)).BeginInit();
             this.SuspendLayout();
@@ -116,23 +115,13 @@
             this.SQLTABLE.RowTemplate.Height = 33;
             this.SQLTABLE.Size = new System.Drawing.Size(1061, 519);
             this.SQLTABLE.TabIndex = 4;
-            // 
-            // testbutton
-            // 
-            this.testbutton.Location = new System.Drawing.Point(1184, 551);
-            this.testbutton.Name = "testbutton";
-            this.testbutton.Size = new System.Drawing.Size(111, 35);
-            this.testbutton.TabIndex = 5;
-            this.testbutton.Text = "test";
-            this.testbutton.UseVisualStyleBackColor = true;
-            this.testbutton.Click += new System.EventHandler(this.testbutton_Click);
+            this.SQLTABLE.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SQLTABLE_CellContentClick);
             // 
             // Information
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1324, 595);
-            this.Controls.Add(this.testbutton);
             this.Controls.Add(this.SQLTABLE);
             this.Controls.Add(this.toolStrip1);
             this.Name = "Information";
@@ -153,6 +142,5 @@
         private System.Windows.Forms.ToolStripButton DrivewayButton;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.DataGridView SQLTABLE;
-        private System.Windows.Forms.Button testbutton;
     }
 }

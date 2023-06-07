@@ -32,6 +32,9 @@
             this.MaintenanceButton = new System.Windows.Forms.ToolStripButton();
             this.complaintsButton = new System.Windows.Forms.ToolStripButton();
             this.Customerdata = new System.Windows.Forms.DataGridView();
+            this.编号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.维修状态 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.修改 = new System.Windows.Forms.DataGridViewLinkColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Customerdata)).BeginInit();
             this.SuspendLayout();
@@ -73,13 +76,46 @@
             // 
             // Customerdata
             // 
+            this.Customerdata.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Customerdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Customerdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.编号,
+            this.维修状态,
+            this.修改});
             this.Customerdata.Location = new System.Drawing.Point(207, 63);
             this.Customerdata.Name = "Customerdata";
             this.Customerdata.RowHeadersWidth = 72;
             this.Customerdata.RowTemplate.Height = 33;
             this.Customerdata.Size = new System.Drawing.Size(1068, 483);
             this.Customerdata.TabIndex = 2;
+            this.Customerdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Customerdata_CellContentClick);
+            // 
+            // 编号
+            // 
+            this.编号.DataPropertyName = "Bid";
+            this.编号.FillWeight = 50F;
+            this.编号.HeaderText = "编号";
+            this.编号.MinimumWidth = 9;
+            this.编号.Name = "编号";
+            this.编号.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.编号.Visible = false;
+            // 
+            // 维修状态
+            // 
+            this.维修状态.DataPropertyName = "维修状态";
+            this.维修状态.HeaderText = "维修状态";
+            this.维修状态.MinimumWidth = 9;
+            this.维修状态.Name = "维修状态";
+            this.维修状态.Visible = false;
+            // 
+            // 修改
+            // 
+            this.修改.HeaderText = "修改";
+            this.修改.MinimumWidth = 9;
+            this.修改.Name = "修改";
+            this.修改.Text = "修改状态";
+            this.修改.UseColumnTextForLinkValue = true;
+            this.修改.Visible = false;
             // 
             // Customer
             // 
@@ -104,5 +140,8 @@
         private System.Windows.Forms.ToolStripButton MaintenanceButton;
         private System.Windows.Forms.ToolStripButton complaintsButton;
         private System.Windows.Forms.DataGridView Customerdata;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 编号;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 维修状态;
+        private System.Windows.Forms.DataGridViewLinkColumn 修改;
     }
 }

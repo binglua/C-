@@ -128,7 +128,16 @@ namespace C_小区物业管理
         //查询序号
         private void Searchbutton_Click(object sender, EventArgs e)
         {
-            string sql = string.Format("select XFid,消费项目名称,收费类型,XiaoFeiZhangDan.单价 from XiaoFeiXiangMu,XiaoFeiZhangDan where XiaoFeiXiangMu.Xid=XiaoFeiZhangDan.Xid and XFid={0}", BillidBox.Text);
+            string sql = "";
+            if (BillidBox.Text=="")
+            {
+                 sql= "select XFid,消费项目名称,收费类型,XiaoFeiZhangDan.单价 from XiaoFeiXiangMu,XiaoFeiZhangDan where XiaoFeiXiangMu.Xid=XiaoFeiZhangDan.Xid";
+            }
+            else
+            {
+                sql = string.Format("select XFid,消费项目名称,收费类型,XiaoFeiZhangDan.单价 from XiaoFeiXiangMu,XiaoFeiZhangDan where XiaoFeiXiangMu.Xid=XiaoFeiZhangDan.Xid and XFid={0}", BillidBox.Text);
+            }
+            
             financeData.DataSource= DbHelper.ExecuteQuery(sql);
 
         }

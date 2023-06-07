@@ -22,6 +22,7 @@ namespace C_小区物业管理
             }
 
         }
+
         public static void Delete(string TableName,string Columnid,string Value)
         {
             if (MessageBox.Show("是否删除", "删除框", MessageBoxButtons.OKCancel) == DialogResult.OK)
