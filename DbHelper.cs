@@ -5,7 +5,7 @@ namespace C_小区物业管理
 {
     public class DbHelper
     {
-        private const string ConnectionString = "Server=localhost;Database=XiaoQu;Trusted_Connection=True;";
+        private const string ConnectionString = "Server=localhost;Database=Lu;Trusted_Connection=True;";
 
         // 执行查询语句
         public static DataTable ExecuteQuery(string sql)

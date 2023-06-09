@@ -55,10 +55,12 @@ namespace C_小区物业管理
             rg.Dispose();
             gp.Dispose();
         }
+        //更改Logo的方法
         public void SetLOGO(Image image)
         {
             pictureBox1.Image = image;
         }
+        //更改背景图片的方法
         public void ChangeBackgroundImage(Image image)
         {
             this.BackgroundImage = image;

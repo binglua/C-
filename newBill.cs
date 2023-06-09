@@ -27,7 +27,10 @@ namespace C_小区物业管理
         private void button1_Click(object sender, EventArgs e)
         {
             string sql = string.Format("insert into XiaoFeiZhangDan values ({0},'{1}')", comboBox2.SelectedValue,textBox2.Text);
-           
+            if (DbHelper.ExecuteNonQuery(sql)>0)
+            {
+                MessageBox.Show("添加成功");
+            } 
         }
     }
 }
